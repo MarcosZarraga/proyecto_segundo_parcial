@@ -1,0 +1,20 @@
+
+<div align="center">
+	
+	<img src="https://pegui.edu.co/wp-content/uploads/2017/07/imagen-ingles.jpg" width="80%" height="400" class="d-inline-block align-top">
+</div>
+	
+>
+		<div class="container" align="center">
+			<p class="font-weight-bold">Nombre de usuario</p>
+			<div class="input-group mb-3">
+ 				 {{input type="text" class="form-control" placeholder="User name" value=username }}
+			</div>
+			<p class="font-weight-bold">Contraseña</p>
+			<div class="input-group mb-3">
+ 				 {{input type="password" class="form-control" placeholder="Password" value=password }}
+			</div>
+			<button type="button" class="btn btn-outline-primary"{{action 'submitLogin' on="click"}} >Ingresar!</button>
+		</div>
+
+	

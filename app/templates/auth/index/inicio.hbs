@@ -1,0 +1,26 @@
+{{outlet}}
+<br>
+<div class="alert alert-secondary" role="alert">
+  Suscriptores Añadidos
+</div>
+{{#each model as |subscriber|}}
+	<div class="card" style="width: 18rem;">
+ 	 	<div class="card-body">
+ 	 		<p class="card-title">Nombre(s)</p>
+ 	 		{{input class="card-title" type=text value=subscriber.name}}
+ 	 		<p class="card-title">Apellido(s)</p>
+ 	 		{{input class="card-title" type=text value=subscriber.last_name}}
+   	 		<button type="submit" class="btn btn-primary" {{action "editarSub" subscriber  on='click'}}>Editar</button>
+   	 		<button type="submit" class="btn btn-primary" {{action "eliminarSub" subscriber on='click' }} >Eliminar</button>
+ 	 	</div>
+	</div>
+{{/each}}
+<div class="alert alert-primary" role="alert">
+  Maestros Añadidos
+</div>
+
+
+
+<div class="alert alert-danger" role="alert">
+  Alumnos Añadidos
+</div>
