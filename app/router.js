@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('index', function() {
       this.route('subscriber', {path: '/sub'});
       this.route('inicio' , {path: '/'});
+      this.route('student');
     });
   });
 });
