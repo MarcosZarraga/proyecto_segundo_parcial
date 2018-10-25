@@ -13,8 +13,26 @@ Router.map(function() {
       this.route('subscriber', {path: '/sub'});
       this.route('inicio' , {path: '/'});
       this.route('student');
+      this.route('teacher', {path: '/teacher'});
+      this.route('lesson');
+      this.route('studentDetail');
     });
   });
+  this.route('authStudent', function() {
+    this.route('index', function() {
+      this.route('clase' );
+      this.route('StudentTeacher' ,{path: '/teacher'});
+      this.route('inicio',{path: '/'});
+      this.route('payments');
+    });
+  });
+  this.route('authTeacher', function() {
+    this.route('index', function() {
+      this.route('inicio',{path: '/'});
+      this.route('cursos');
+    });
+  });
+
 });
 
 export default Router;

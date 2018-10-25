@@ -22,3 +22,29 @@
   </div>
   <button type="submit" class="btn btn-primary" >Añadir Alumno</button>
 </form>
+
+<div class="alert alert-primary" role="alert">
+  Lista de alumnos añadidos
+  </div>
+  {{#each model as |student|}}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Actividad Actual</p>
+      {{input class="card-title" type=text value=student.current_activity_id}}
+      <p class="card-title">Nombre(s)</p>
+      {{input class="card-title" type=text value=student.name}}
+      <p class="card-title">Apellido(s)</p>
+      {{input class="card-title" type=text value=student.last_name}}
+      <p class="card-title">Telefono</p>
+      {{input class="card-title" type=text value=student.phone}}
+      <p class="card-title">Contracto asignado</p>
+      {{input class="card-title" type=text value="3"}}
+        <button type="submit" class="btn btn-primary" {{action "editarStudent" student  on='click'}}>Editar</button>
+        <button type="submit" class="btn btn-primary" {{action "eliminarStudent" student on='click' }} >Eliminar</button>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-light"><a href="/auth/index/studentDetail">Ver calificaciones</a></button>
+    </div>
+  </div>
+{{/each}}
+

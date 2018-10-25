@@ -2,14 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	actions:{
-		addStudent(){
+		addLesson(){
 			var current_activity_id = this.get("current_activity_id");
 			var name = this.get("name");
-			var last_name= this.get("last_name");
-			var phone= this.get("phone");
-			if(last_name && name && phone)
+			var level_id= this.get("level_id");
+			if(level_id && name)
 			{		
-				this.store.createRecord('student', {current_activity_id:current_activity_id, name:name , last_name:last_name, phone:phone}).save().then(()=>{
+				this.store.createRecord('lesson', {name:name , level_id:level_id}).save().then(()=>{
 					this.transitionToRoute("/auth/index");
 				});
 			}
@@ -19,20 +18,20 @@ export default Ember.Controller.extend({
 
 			}
 			this.set("name","");
-			this.set("lastName","");
+			this.set("level_id","");
 		},
-		eliminarStudent(student){
+		eliminarLesson(lesson){
 			var resultado=confirm("¿Seguro que quieres borrar?");
 			if (resultado) {
-				student.destroyRecord().then(()=>{
-					alert("Alumno borrado correctamente");
+				lesson.destroyRecord().then(()=>{
+					alert("Clase borrado correctamente");
 				});
 			}
 		},
-		editarStudent(student){
+		editarLesson(lesson){
 			var resultado=confirm("¿Deseas actualizar esta información?");
 			if (resultado) {
-				student.save().then(()=>{
+				lesson.save().then(()=>{
 					alert("Registro editado correctamente")
 				});
 			}

@@ -1,0 +1,11 @@
+{{outlet}}
+
+{{#each model as |teacher|}}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{teacher.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{teacher.last_name}}</h6>
+    <p class="card-text">{{teacher.phone}}</p>
+  </div>
+</div>
+{{/each}}
