@@ -19,22 +19,6 @@ export default Ember.Controller.extend({
 			}
 			this.set("name","");
 			this.set("lastName","");
-		},
-		eliminarTeacher(teacher){
-			var resultado=confirm("¿Seguro que quieres borrar?");
-			if (resultado) {
-				teacher.destroyRecord().then(()=>{
-					alert("Alumno borrado correctamente");
-				});
-			}
-		},
-		editarTeacher(teacher){
-			var resultado=confirm("¿Deseas actualizar esta información?");
-			if (resultado) {
-				teacher.save().then(()=>{
-					alert("Registro editado correctamente")
-				});
-			}
 		}
 	}
 });

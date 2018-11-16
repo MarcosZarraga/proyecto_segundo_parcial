@@ -3,7 +3,16 @@
 <form {{action 'addStudent' on='submit'}}>
 	  <div class="form-group">
     <label >Actividad Cursando</label>
-    {{input type="number" class="form-control"  placeholder="Actividad Cursando" value=current_activity_id}}
+{{#power-select
+            options=model.lesson
+            placeholder="Añadir actividad"
+            selected=lessonSelected
+            onchange=(action (mut lessonSelected))
+            as |selectedActivity|
+          }}
+            {{selectedActivity}}
+          {{/power-select}}
+{{!--     {{input type="number" class="form-control"  placeholder="Actividad Cursando" value=current_activity_id}} --}}
 
   </div>
     <div class="form-group">
@@ -16,35 +25,17 @@
     {{input type="text" class="form-control"  placeholder="Añadir Apellido" value=last_name}}
 
   </div>
+   <div class="form-group">
+    <label >Email</label>
+    {{input type="text" class="form-control"  placeholder="Añadir Email" value=email}}
+
+  </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Telefono</label>
+    <label>Telefono</label>
     {{input type="number" class="form-control"  placeholder="Telefono" value=phone}}
   </div>
   <button type="submit" class="btn btn-primary" >Añadir Alumno</button>
 </form>
 
-<div class="alert alert-primary" role="alert">
-  Lista de alumnos añadidos
-  </div>
-  {{#each model as |student|}}
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <p class="card-title">Actividad Actual</p>
-      {{input class="card-title" type=text value=student.current_activity_id}}
-      <p class="card-title">Nombre(s)</p>
-      {{input class="card-title" type=text value=student.name}}
-      <p class="card-title">Apellido(s)</p>
-      {{input class="card-title" type=text value=student.last_name}}
-      <p class="card-title">Telefono</p>
-      {{input class="card-title" type=text value=student.phone}}
-      <p class="card-title">Contracto asignado</p>
-      {{input class="card-title" type=text value="3"}}
-        <button type="submit" class="btn btn-primary" {{action "editarStudent" student  on='click'}}>Editar</button>
-        <button type="submit" class="btn btn-primary" {{action "eliminarStudent" student on='click' }} >Eliminar</button>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-light"><a href="/auth/index/studentDetail">Ver calificaciones</a></button>
-    </div>
-  </div>
-{{/each}}
+ 
 

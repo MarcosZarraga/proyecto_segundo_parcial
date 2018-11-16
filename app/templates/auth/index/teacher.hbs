@@ -19,22 +19,4 @@
   <button type="submit" class="btn btn-primary" >Añadir Maestro</button>
 </form>
 
-<div class="alert alert-primary" role="alert">
-  Lista de maestros añadidos
-  </div>
-  {{#each model as |teacher|}}
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <p class="card-title">Nombre(s)</p>
-      {{input class="card-title" type=text value=teacher.name}}
-      <p class="card-title">Apellido(s)</p>
-      {{input class="card-title" type=text value=teacher.last_name}}
-      <p class="card-title">Telefono</p>
-      {{input class="card-title" type=text value=teacher.phone}}
-        <button type="submit" class="btn btn-primary" {{action "editarTeacher" teacher  on='click'}}>Editar</button>
-        <button type="submit" class="btn btn-primary" {{action "eliminarTeacher" teacher on='click' }} >Eliminar</button>
-    </div>
-  </div>
-{{/each}}
-
 

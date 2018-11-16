@@ -3,7 +3,7 @@
 <div class="alert alert-secondary" role="alert">
   Suscriptores Añadidos
 </div>
-{{#each model as |subscriber|}}
+{{#each model.subscriber as |subscriber|}}
 	<div class="card" style="width: 18rem;">
  	 	<div class="card-body">
  	 		<p class="card-title">Nombre(s)</p>
@@ -18,21 +18,46 @@
 <div class="alert alert-primary" role="alert">
   Maestros Añadidos
 </div>
+{{#each model.teacher as |teacher|}}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nombre(s)</p>
+      {{input class="card-title" type=text value=teacher.name}}
+      <p class="card-title">Apellido(s)</p>
+      {{input class="card-title" type=text value=teacher.last_name}}
+      <p class="card-title">Telefono</p>
+      {{input class="card-title" type=text value=teacher.phone}}
+        <button type="submit" class="btn btn-primary" {{action "editarTeacher" teacher  on='click'}}>Editar</button>
+        <button type="submit" class="btn btn-primary" {{action "eliminarTeacher" teacher on='click' }} >Eliminar</button>
+    </div>
+  </div>
+{{/each}}
 
 
 
 <div class="alert alert-danger" role="alert">
   Alumnos Añadidos
   </div>
-{{!-- {{#each model as |student|}}
-	<div class="card" style="width: 18rem;">
- 	 	<div class="card-body">
- 	 		<p class="card-title">Nombre(s)</p>
- 	 		{{input class="card-title" type=text value=student.name}}
- 	 		<p class="card-title">Apellido(s)</p>
- 	 		{{input class="card-title" type=text value=student.last_name}}
-   	 		<button type="submit" class="btn btn-primary" {{action "editarSub" subscriber  on='click'}}>Editar</button>
-   	 		<button type="submit" class="btn btn-primary" {{action "eliminarSub" subscriber on='click' }} >Eliminar</button>
- 	 	</div>
-	</div>
-{{/each}} --}}
+ {{#each model.student as |student|}}
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <p class="card-title">Nombre(s)</p>
+      {{input class="card-title" type=text value=student.name}}
+      <p class="card-title">Apellido(s)</p>
+      {{input class="card-title" type=text value=student.last_name}}
+      <p class="card-title">Actividad Actual</p>
+      {{input class="card-title" type=text value=student.current_activity_id}}
+      <p class="card-title">Telefono</p>
+      {{input class="card-title" type=text value=student.phone}}
+      <p class="card-title">Email</p>
+      {{input class="card-title" type=text value=student.email}}
+      <p class="card-title">Contracto asignado</p>
+      {{input class="card-title" type=text value="3"}}
+        <button type="submit" class="btn btn-primary" {{action "editarStudent" student  on='click'}}>Editar</button>
+        <button type="submit" class="btn btn-primary" {{action "eliminarStudent" student on='click' }} >Eliminar</button>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-light"><a href="/auth/index/studentDetail">Ver calificaciones</a></button>
+    </div>
+  </div>
+{{/each}}
