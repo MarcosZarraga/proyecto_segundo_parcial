@@ -3,16 +3,22 @@
 <form {{action 'addStudent' on='submit'}}>
 	  <div class="form-group">
     <label >Actividad Cursando</label>
-{{#power-select
-            options=model.lesson
-            placeholder="Añadir actividad"
-            selected=lessonSelected
-            onchange=(action (mut lessonSelected))
-            as |selectedActivity|
-          }}
-            {{selectedActivity}}
-          {{/power-select}}
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Selecciona la clase
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {{#each model.lesson as |lesson|}}
+              <a class="dropdown-item"{{action "setLesson" lesson on="click"}}>{{lesson.id}}</a>
+            {{/each}}
+        </div>
+      </div>
 {{!--     {{input type="number" class="form-control"  placeholder="Actividad Cursando" value=current_activity_id}} --}}
+
+  </div>
+      <div class="form-group">
+    <label >Actividad Seleccionada</label>
+    {{input type="text" class="form-control" placeholder="Actividad añadida" value=current_activity.id disabled=true}}
 
   </div>
     <div class="form-group">

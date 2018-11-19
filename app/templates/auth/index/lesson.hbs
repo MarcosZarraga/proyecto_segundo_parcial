@@ -17,17 +17,21 @@
 <div class="alert alert-primary" role="alert">
   Lista de clases añadidas
   </div>
-  {{#each model as |lesson|}}
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <p class="card-title">Nombre de la clase</p>
-      {{input class="card-title" type=text value=lesson.name}}
-      <p class="card-title">Nivel</p>
-      {{input class="card-title" type=text value=lesson.level_id}}
-        <button type="submit" class="btn btn-primary" {{action "editarLesson" lesson  on='click'}}>Editar</button>
-        <button type="submit" class="btn btn-primary" {{action "eliminarLesson" lesson on='click' }} >Eliminar</button>
+    <div class="container">
+      <div class="row">
+          {{#each model as |lesson|}}
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <p class="card-title">Nombre de la clase</p>
+              {{input class="card-title" type=text value=lesson.name}}
+              <p class="card-title">Nivel</p>
+              {{input class="card-title" type=text value=lesson.level_id}}
+                <button type="submit" class="btn btn-primary" {{action "editarLesson" lesson  on='click'}}>Editar</button>
+                <button type="submit" class="btn btn-primary" {{action "eliminarLesson" lesson on='click' }} >Eliminar</button>
+            </div>
+          </div>
+        {{/each}}
+      </div>
     </div>
-  </div>
-{{/each}}
 
 
