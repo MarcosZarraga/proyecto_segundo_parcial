@@ -20,13 +20,13 @@ export default Ember.Controller.extend({
 			{		
 				this.store.createRecord('student', {current_activity:current_activity, name:name , last_name:last_name, phone:phone, email:email}).save().then((savedStudent)=>{
 					 this.store.createRecord('student-contract', {student:savedStudent, contract:contract, start_date:contract.get("contract_signature_date")}).save().then((savedStudentC)=>{
-					 		console.log('Contrato en Student:', savedStudent.get('student_contract.content'))
-					 		console.log('Contrato Creado:', savedStudentC.get('id'))
+					 		console.log('Contrato en Student:', savedStudent.get('student_contract.content'));
+					 		console.log('Contrato Creado:', savedStudentC.get('id'));
 					 		savedStudent.save().then(()=>{
-					 			console.log('Contrato en Student:', savedStudent.get('student_contract.content'))
-					 			console.log('Contrato Creado:', savedStudentC.get('id'))
+					 			console.log('Contrato en Student:', savedStudent.get('student_contract.content'));
+					 			console.log('Contrato Creado:', savedStudentC.get('id'));
 					 		this.transitionToRoute("auth.index");
-					 		})
+					 		});
 					 });
 		
 				});
