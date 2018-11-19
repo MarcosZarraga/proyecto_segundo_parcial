@@ -64,13 +64,13 @@
           <p class="card-title">Apellido(s)</p>
           {{input class="card-title" type=text value=student.last_name}}
           <p class="card-title">Actividad Actual</p>
-          {{input class="card-title" type=text value=student.current_activity.id disabled=true}}
+          {{input class="card-title" type=text value=student.current_activity.name disabled=true}}
           <p class="card-title">Telefono</p>
           {{input class="card-title" type=text value=student.phone}}
           <p class="card-title">Email</p>
           {{input class="card-title" type=text value=student.email}}
           <p class="card-title">Contracto asignado</p>
-          {{input class="card-title" type=text value=student.student-contract.contract disabled=true}}
+          {{input class="card-title" type=text value=student.student_contract.contract.id disabled=true}}
             <button type="submit" class="btn btn-primary" {{action "editarStudent" student  on='click'}}>Editar</button>
             <button type="submit" class="btn btn-primary" {{action "eliminarStudent" student on='click' }} >Eliminar</button>
             <br>
