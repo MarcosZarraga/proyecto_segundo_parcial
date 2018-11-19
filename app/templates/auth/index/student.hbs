@@ -9,7 +9,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {{#each model.lesson as |lesson|}}
-              <a class="dropdown-item"{{action "setLesson" lesson on="click"}}>{{lesson.name}}</a>
+              <a class="dropdown-item"{{action "setLesson" lesson on="click"}}>{{lesson.name}} nivel {{lesson.level_id}}</a>
             {{/each}}
         </div>
       </div>
