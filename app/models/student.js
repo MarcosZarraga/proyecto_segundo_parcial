@@ -5,6 +5,6 @@ export default DS.Model.extend({
 	  last_name: DS.attr('string'),
 	  phone: DS.attr('string'),
 	  email: DS.attr('string'),
-	  current_activity: DS.belongsTo('activity'),
+	  current_activity: DS.belongsTo('lesson'),
 	  student_contract: DS.hasMany('student-contract')
 });
