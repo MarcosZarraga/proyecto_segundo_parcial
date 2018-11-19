@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
 			if(last_name && name)
 			{		
 				this.store.createRecord('subscriber', {name:name , last_name:last_name}).save().then((subscriber)=>{
-					this.store.createRecord('contract', {subscriber_id:subscriber.id , contract_signature_date:contract_signature_date}).save().then(()=>{
+					this.store.createRecord('contract', {subscriber:subscriber , contract_signature_date:contract_signature_date}).save().then(()=>{
 						this.transitionToRoute("/auth/index");
 				});
 				});

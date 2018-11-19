@@ -38,6 +38,8 @@
           {{input class="card-title" type=text value=teacher.last_name}}
           <p class="card-title">Telefono</p>
           {{input class="card-title" type=text value=teacher.phone}}
+          <p class="card-title">Email</p>
+          {{input class="card-title" type=text value=teacher.mail}}
             <button type="submit" class="btn btn-primary" {{action "editarTeacher" teacher  on='click'}}>Editar</button>
             <button type="submit" class="btn btn-primary" {{action "eliminarTeacher" teacher on='click' }} >Eliminar</button>
         </div>
@@ -68,7 +70,7 @@
           <p class="card-title">Email</p>
           {{input class="card-title" type=text value=student.email}}
           <p class="card-title">Contracto asignado</p>
-          {{input class="card-title" type=text value="3" disabled=true}}
+          {{input class="card-title" type=text value=student.student-contract.contract disabled=true}}
             <button type="submit" class="btn btn-primary" {{action "editarStudent" student  on='click'}}>Editar</button>
             <button type="submit" class="btn btn-primary" {{action "eliminarStudent" student on='click' }} >Eliminar</button>
             <br>

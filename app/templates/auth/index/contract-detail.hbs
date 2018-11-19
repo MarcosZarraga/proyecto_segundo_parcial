@@ -1,0 +1,27 @@
+<div class="alert alert-primary" role="alert">
+  Contratos Añadidos	
+</div>
+
+<div class="container">
+  <div class="row">
+    {{#each model.contract as |contract|}}
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">Numero de contrato</p>
+            {{input class="card-title" type=text value=contract.id disabled=true}}
+            <p class="card-title">Subscriptor</p>
+            {{input class="card-title" type=text value=contract.subscriber.name disabled=true}}
+              <button type="submit" class="btn btn-primary" {{action "editarCont" contract  on='click'}}>Editar</button>
+              <button type="submit" class="btn btn-primary" {{action "eliminarCont" contract on='click' }} >Eliminar</button>
+              <br>
+              <br>
+              <button type="submit" class="btn btn-primary" {{action "addStudent" contract.id on='click' }} >Añadir Alumno</button>
+
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+

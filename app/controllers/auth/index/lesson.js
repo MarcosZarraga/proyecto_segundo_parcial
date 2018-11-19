@@ -3,7 +3,6 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
 	actions:{
 		addLesson(){
-			var current_activity_id = this.get("current_activity_id");
 			var name = this.get("name");
 			var level_id= this.get("level_id");
 			if(level_id && name)
@@ -32,7 +31,7 @@ export default Ember.Controller.extend({
 			var resultado=confirm("¿Deseas actualizar esta información?");
 			if (resultado) {
 				lesson.save().then(()=>{
-					alert("Registro editado correctamente")
+					alert("Registro editado correctamente");
 				});
 			}
 		}

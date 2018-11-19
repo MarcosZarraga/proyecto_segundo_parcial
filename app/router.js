@@ -12,10 +12,11 @@ Router.map(function() {
     this.route('index', function() {
       this.route('subscriber', {path: '/sub'});
       this.route('inicio' , {path: '/'});
-      this.route('student');
+      this.route('student', {path: '/:id'});
       this.route('teacher', {path: '/teacher'});
       this.route('lesson');
       this.route('studentDetail');
+      this.route('contract-detail');
     });
   });
   this.route('authStudent', function() {

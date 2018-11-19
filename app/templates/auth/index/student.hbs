@@ -9,7 +9,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {{#each model.lesson as |lesson|}}
-              <a class="dropdown-item"{{action "setLesson" lesson on="click"}}>{{lesson.id}}</a>
+              <a class="dropdown-item"{{action "setLesson" lesson on="click"}}>{{lesson.name}}</a>
             {{/each}}
         </div>
       </div>
@@ -19,6 +19,12 @@
       <div class="form-group">
     <label >Actividad Seleccionada</label>
     {{input type="text" class="form-control" placeholder="Actividad añadida" value=current_activity.id disabled=true}}
+
+  </div>
+
+      <div class="form-group">
+    <label >Contrato Asignado</label>
+    {{input type="text" class="form-control" placeholder="Contrato" value=model.contract.id disabled=true}}
 
   </div>
     <div class="form-group">
