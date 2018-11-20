@@ -1,2 +1,36 @@
 {{outlet}}
- <img src="https://humbertocueva.files.wordpress.com/2013/09/secundaria_1.jpg">
+ {{!-- <img src="https://humbertocueva.files.wordpress.com/2013/09/secundaria_1.jpg"> --}}
+
+  <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <p class="card-title">Alumno</p>
+          {{input class="card-title" type=text value=model.student.name disabled=true}}
+          {{input class="card-title" type=text value=model.student.last_name disabled=true}}
+          <p class="card-title">Actividad Actual</p>
+          {{input class="card-title" type=text value=model.student.current_activity.name disabled=true}}
+           <p class="card-title">Nivel</p>
+          {{input class="card-title" type=text value=model.student.current_activity.level_id disabled=true}}
+          <p class="card-title">Telefono</p>
+          {{input class="card-title" type=text value=model.student.phone disabled=true}}
+          <p class="card-title">Email</p>
+          {{input class="card-title" type=text value=model.student.email disabled=true}}
+        </div>
+      </div>
+<div class="container">
+  <div class="row">
+    {{#each model.lesson as |lesson|}}
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">Nombre actividad</p>
+            {{input class="card-title" type=text value=lesson.name disabled=true}}
+            <p class="card-title">Nivel</p>
+            {{input class="card-title" type=text value=lesson.level_id disabled=true}}
+              <button type="submit" class="btn btn-primary" {{action "changeLesson" model.student lesson on='click' }} >Cambiar Actividad</button>
+
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

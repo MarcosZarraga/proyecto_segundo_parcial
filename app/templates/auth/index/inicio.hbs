@@ -65,6 +65,8 @@
           {{input class="card-title" type=text value=student.last_name}}
           <p class="card-title">Actividad Actual</p>
           {{input class="card-title" type=text value=student.current_activity.name disabled=true}}
+          <p class="card-title">Nivel Actual</p>
+          {{input class="card-title" type=text value=student.current_activity.level_id disabled=true}}
           <p class="card-title">Telefono</p>
           {{input class="card-title" type=text value=student.phone}}
           <p class="card-title">Email</p>
@@ -75,7 +77,7 @@
             <button type="submit" class="btn btn-primary" {{action "eliminarStudent" student on='click' }} >Eliminar</button>
             <br>
             <br>
-            <button type="submit" class="btn btn-light"><a href="/auth/index/studentDetail">Detalles del alumno</a></button>
+            <button type="submit" class="btn btn-primary" {{action "goToDetailStudent" student.id on='click' }} >Detalles del alumno</button>
         </div>
       </div>
     {{/each}}

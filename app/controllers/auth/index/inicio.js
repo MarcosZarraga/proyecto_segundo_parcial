@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	actions :{
+		goToDetailStudent(idStudent){
+			this.transitionToRoute("auth.index.studentDetail",idStudent);
+
+		},
 		eliminarSub(subscriber){
 			var resultado=confirm("¿Seguro que quieres borrar?");
 			if (resultado) {

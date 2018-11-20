@@ -15,7 +15,7 @@ Router.map(function() {
       this.route('student', {path: '/:id'});
       this.route('teacher', {path: '/teacher'});
       this.route('lesson');
-      this.route('studentDetail');
+      this.route('studentDetail' , {path: 'student-detail/:id'});
       this.route('contract-detail');
     });
   });
