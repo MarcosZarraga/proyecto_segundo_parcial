@@ -1,21 +1,39 @@
 {{outlet}}
  {{!-- <img src="https://humbertocueva.files.wordpress.com/2013/09/secundaria_1.jpg"> --}}
 
-  <div class="card" style="width: 18rem;">
+  <div class="row">
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+    <pre></pre>
+    <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title">Alumno</p>
+            {{input class="card-title" type=text value=model.student.name disabled=true}}
+            {{input class="card-title" type=text value=model.student.last_name disabled=true}}
+            <p class="card-title">Telefono</p>
+            {{input class="card-title" type=text value=model.student.phone disabled=true}}
+            <p class="card-title">Email</p>
+            {{input class="card-title" type=text value=model.student.email disabled=true}}
+          </div>
+     </div>
+      <div class="card" style="width: 64rem;">
         <div class="card-body">
-          <p class="card-title">Alumno</p>
-          {{input class="card-title" type=text value=model.student.name disabled=true}}
-          {{input class="card-title" type=text value=model.student.last_name disabled=true}}
-          <p class="card-title">Actividad Actual</p>
-          {{input class="card-title" type=text value=model.student.current_activity.name disabled=true}}
-           <p class="card-title">Nivel</p>
-          {{input class="card-title" type=text value=model.student.current_activity.level_id disabled=true}}
-          <p class="card-title">Telefono</p>
-          {{input class="card-title" type=text value=model.student.phone disabled=true}}
-          <p class="card-title">Email</p>
-          {{input class="card-title" type=text value=model.student.email disabled=true}}
+          <h5 class="card-title">Lección Actual Del alumno</h5>
+          <h6 class="card-subtitle mb-4">{{model.student.current_activity.name}} nivel 
+          {{model.student.current_activity.level_id}} </h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
         </div>
       </div>
+  </div>
+
+<br>
+<br>
+
 <div class="container">
   <div class="row">
     {{#each model.lesson as |lesson|}}
