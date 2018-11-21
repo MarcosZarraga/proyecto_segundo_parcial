@@ -18,9 +18,9 @@ export default Ember.Controller.extend({
 			var email= this.get("email");
 			if(last_name && name && phone && email)
 			{		
-				let studentS = this.store.createRecord('student', {current_activity:current_activity, name:name , last_name:last_name, phone:phone, email:email})
+				let studentS = this.store.createRecord('student', {current_activity:current_activity, name:name , last_name:last_name, phone:phone, email:email});
 				studentS.save().then(()=>{
-					 let contratoTemp =  this.store.createRecord('student-contract', {student:studentS, contract:contract, start_date:contract.get("contract_signature_date")})
+					 let contratoTemp =  this.store.createRecord('student-contract', {student:studentS, contract:contract, start_date:contract.get("contract_signature_date")});
 						contratoTemp.save().then(()=>{
 					 		studentS.set('student_contract', contratoTemp);
 					 		studentS.save().then(()=>{

@@ -46,6 +46,7 @@
   },
   "private": true,
   "dependencies": {
-    "npm": "^6.4.1"
+    "npm": "^6.4.1",
+    "sweetalert": "^2.1.2"
   }
 }

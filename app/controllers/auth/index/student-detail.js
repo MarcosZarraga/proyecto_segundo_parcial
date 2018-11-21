@@ -6,7 +6,8 @@ export default Ember.Controller.extend({
 
 			student.set('current_activity', lesson);
 					 		student.save().then(()=>{
-					 			alert("Actividad Modificada")
+					 			alert("Actividad Modificada");
+					 			this.transitionToRoute("auth.index");
 					 		});
 		}
 	}
