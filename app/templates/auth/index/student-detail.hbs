@@ -28,12 +28,9 @@
           {{#if lessonSelected}}
             {{#each activities as |activity|}}
               <p>{{activity.activity_type.name}}</p>
-            {{/each}}
+              <button type="submit" class="btn btn-primary" {{action "goToClass" activity model.student on='click' }} >Detalles</button>
 
-{{!--             {{else}}
-                {{#each activities as |activity|}}
-                  <p>{{model.student.current_activity.name}}</p>
-                 {{/each}} --}}
+            {{/each}}
           {{/if}}
         </div>
       </div>

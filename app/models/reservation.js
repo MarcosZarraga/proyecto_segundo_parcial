@@ -5,7 +5,7 @@ export default DS.Model.extend({
 	activity:DS.belongsTo("activity"),
 	student:DS.belongsTo("student"),
 	grade:DS.attr("number"),
-	status:DS.attr("bool")
+	status:DS.attr("number")
 
 
 });

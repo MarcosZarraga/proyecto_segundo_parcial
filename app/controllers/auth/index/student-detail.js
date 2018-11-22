@@ -12,12 +12,16 @@ export default Ember.Controller.extend({
 			student.set('current_activity', lesson);
 			student.save().then(()=>
 			{
-				this.set('lessonSelected', lesson)
+				this.set('lessonSelected', lesson);
 				alert("Actividad Modificada");
 					 			// this.transitionToRoute("auth.index");
 
 			});
 			
+		},
+
+		goToClass(activity){
+			this.transitionToRoute("auth.index.class-detail", activity);
 		}
 	}
 });

@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+   {{ model.activity.lesson.name}} nivel {{ model.activity.lesson.level_id}} 
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{model.activity.activity_type.name}}</h5>
+    <p class="card-text">Tomar asistencia y añadir calificaciones</p>
+    <p></p>
+		<div class="container">
+		  <div class="row">
+		    <div class="col-sm">
+		       <p>Añadir Calificación</p>
+            {{input type="number" value=grade}}
+		    </div>
+		    <div class="col-sm">
+		      <p>Asistencia</p>
+		      {{input type="checkbox" checked=status}}
+		    </div>
+		    <div class="col-sm">
+		        <button type="submit" class="btn btn-primary" {{action "addReservation" on='click' }} >Registrar</button>
+		    </div>
+		  </div>
+		</div>
+  </div>
+</div>

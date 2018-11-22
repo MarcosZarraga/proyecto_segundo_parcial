@@ -17,6 +17,7 @@ Router.map(function() {
       this.route('lesson');
       this.route('studentDetail' , {path: 'student-detail/:id'});
       this.route('contract-detail');
+      this.route('class-detail', {path: 'classDetail/:id'});
     });
   });
   this.route('authStudent', function() {
