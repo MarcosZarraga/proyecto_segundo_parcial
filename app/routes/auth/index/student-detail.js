@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 		return RSVP.hash(
 				{
 					lesson: this.store.findAll('lesson'),
-					student: this.store.findRecord('student', params.id)
+					student: this.store.findRecord('student', params.id),
 
 				}
 			);

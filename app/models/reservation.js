@@ -1,11 +1,11 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-	class:DS.belongsTo("class"),
+	lecture:DS.belongsTo("lecture"),
 	activity:DS.belongsTo("activity"),
 	student:DS.belongsTo("student"),
 	grade:DS.attr("number"),
-	 status:DS.attr("bool")
+	status:DS.attr("bool")
 
 
 });

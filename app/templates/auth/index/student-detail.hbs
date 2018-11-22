@@ -24,9 +24,17 @@
           <h5 class="card-title">Lección Actual Del alumno</h5>
           <h6 class="card-subtitle mb-4">{{model.student.current_activity.name}} nivel 
           {{model.student.current_activity.level_id}} </h6>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="card-link">Card link</a>
-          <a href="#" class="card-link">Another link</a>
+          <p class="card-text">Selecciona una actividad</p>
+          {{#if lessonSelected}}
+            {{#each activities as |activity|}}
+              <p>{{activity.activity_type.name}}</p>
+            {{/each}}
+
+{{!--             {{else}}
+                {{#each activities as |activity|}}
+                  <p>{{model.student.current_activity.name}}</p>
+                 {{/each}} --}}
+          {{/if}}
         </div>
       </div>
   </div>
@@ -40,7 +48,7 @@
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
-            <p class="card-title">Nombre actividad</p>
+            <p class="card-title">Nombre de la lección</p>
             {{input class="card-title" type=text value=lesson.name disabled=true}}
             <p class="card-title">Nivel</p>
             {{input class="card-title" type=text value=lesson.level_id disabled=true}}
